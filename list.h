@@ -50,6 +50,7 @@ void list_destroy(List *list);
 
 /*
 Insere um elemento (data) após elment na lista list. Se element for NULL, insere na cabeça.
+Retorna 0 se sucesso, -1 se falha.
 */
 
 int list_ins_next(List *list, ListElmt *element, const void *data);
@@ -58,6 +59,7 @@ int list_ins_next(List *list, ListElmt *element, const void *data);
 Remove o element que vem depois de element. Se element for NULL, remove a cabeça.
 Além disso atribui o ponteiro void data do elemento para um ponteiro void p 
 que passamos como &p para função.
+Retorna 0 se sucesso, -1 se falha.
 */
 
 int list_rem_next(List *list, ListElmt *element, void **data);
