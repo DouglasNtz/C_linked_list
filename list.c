@@ -20,7 +20,7 @@ void list_destroy(List *list) {
 
     while (list_size(list) > 0) {
 
-        if (list_rem_next(list, NULL, (void **)&data) == 0 && list->destroy != NULL) {
+        if (list_rem_next(list, NULL, &data) == 0 && list->destroy != NULL) {
             list->destroy(data); /* função que sabe destruir por completo o dado apontado por element->data */
         }
     }
@@ -35,7 +35,7 @@ int list_ins_next(List *list, ListElmt *element, const void *data) {
 
     ListElmt *new_element;  /* Cria um ponteiro para elemento */
 
-    if ((new_element = (ListElmt *)malloc(sizeof(ListElmt))) == NULL)  /* aloca espaço na memória para o elemento */
+    if ((new_element = malloc(sizeof(ListElmt))) == NULL)  /* aloca espaço na memória para o elemento */
         return -1;
 
     new_element->data = (void *)data;  /* copia o ponteiro de dados para o campo ponteiro de dados do elemento.
