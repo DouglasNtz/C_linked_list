@@ -31,7 +31,7 @@ void dlist_destroy(Dlist *list) {
 
 }
 
-int list_ins_next(Dlist *list, DListElmt *element, const void *data) {
+int dlist_ins_next(Dlist *list, DListElmt *element, const void *data) {
 
     DListElmt *new_element;
 
@@ -75,7 +75,7 @@ int list_ins_next(Dlist *list, DListElmt *element, const void *data) {
 
 }
 
-int list_ins_prev(Dlist *list, DListElmt *element, const void *data) {
+int dlist_ins_prev(Dlist *list, DListElmt *element, const void *data) {
 
     DListElmt *new_element;
 
