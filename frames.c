@@ -27,7 +27,7 @@ int free_frame(List *frames, int frame_number) {
 
     int *data;
 
-    if ((data = (int *)malloc(sizeof(int))) == NULL) 
+    if ((data = malloc(sizeof(int))) == NULL) 
         return -1;
 
     *data = frame_number;
